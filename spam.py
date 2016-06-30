@@ -4,8 +4,8 @@ import time
 import random
 
 login = open("login.txt", "r").read().split()
-username = config[0]
-password = config[1]
+username = login[0]
+password = login[1]
 
 def start_server():
     server = smtplib.SMTP('smtp.gmail.com:587')
