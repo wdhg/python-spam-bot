@@ -13,7 +13,7 @@ def start_server():
     server.starttls()
     server.login(username, password)
     return server
-    
+
 def send_emails(server):
     emails = "".join(open("victims.txt", "r").read().split()) # File containing victims email addresses
     for email in range(100):
@@ -33,4 +33,7 @@ def main():
             sleep(60) # To bypass gmails auto timeout system
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("Interrupted program. Exitting...")
